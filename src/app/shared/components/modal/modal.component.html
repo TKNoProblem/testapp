@@ -1,0 +1,12 @@
+<h2 mat-dialog-title *ngIf="header">
+  {{header}}
+  <button mat-icon-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<mat-dialog-content class="mat-typography">
+  <ng-content select="[body]"></ng-content>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <ng-content select="[footer]"></ng-content>
+</mat-dialog-actions>

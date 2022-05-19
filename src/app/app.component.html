@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>Test App</span>
+  <span class="ml-5">
+    <button mat-button class="mx-2" *ngFor="let route of routes" [routerLink]="route" routerLinkActive="route-selected">
+      {{route | titlecase}}
+    </button>
+  </span>
+</mat-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

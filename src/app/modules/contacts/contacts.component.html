@@ -1,0 +1,15 @@
+<button mat-button (click)="openAddContactModal()">Add contact</button>
+<div *ngIf="loading" class="flex justify-content-center">
+  <mat-spinner></mat-spinner></div>
+<mat-card class="card" *ngFor="let contact of contacts; trackBy: trackByFn">
+    <mat-card-title>Email: {{contact.email}}</mat-card-title>
+  <mat-card-actions>
+    <button mat-button (click)="openEditContactModal(contact)">Edit</button>
+    <button mat-button (click)="deleteContact(contact.id!)">Delete</button>
+  </mat-card-actions>
+</mat-card>
+<mat-paginator *ngIf="contacts.length>perPage" [length]="contacts.length"
+               [pageSize]="perPage"
+               (page)="changePage($event)"
+               aria-label="Select page">
+</mat-paginator>
